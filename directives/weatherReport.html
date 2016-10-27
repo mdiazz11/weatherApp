@@ -1,0 +1,8 @@
+<div class="text-center weather-report">
+
+    <!--.dt is the date from JSON-->
+    {{convertToDate({date:weatherDay.dt}) | date: 'EEE'}}<br>
+    <i class="wi {{ getIcon( {index:weatherDay.weather['0'].main})}}"></i><br>
+    <!--.temp.day is the daytime temperature-->
+    {{ convertToStandard( {daytimeTemp:weatherDay.temp.day})}} <i class="wi wi-fahrenheit"></i><br>
+</div>

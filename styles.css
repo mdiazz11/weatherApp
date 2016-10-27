@@ -1,0 +1,67 @@
+body {
+    font-size: 20px;
+}
+
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align: left;
+    /* inline-block space fix 
+    margin-right: -4px;*/
+}
+
+.col-no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#back-to-search {
+    margin-top: 25px;
+}
+
+#forecast-box-1,
+#forecast-box-2,
+#forecast-box-3,
+#forecast-box-4,
+#forecast-box-5,
+#forecast-box-6 {
+    color: white;
+}
+
+#forecast-box-1 {
+    background: #0B132B;
+}
+
+#forecast-box-2 {
+    background: #E06D06;
+}
+
+#forecast-box-3 {
+    background: #3A506B;
+}
+
+#forecast-box-4 {
+    background: #FF686B;
+}
+
+#forecast-box-5 {
+    background: #7161EF;
+}
+
+#forecast-box-6 {
+    background: #0F7173;
+}
+
+.main-icon {
+    font-size: 70px;
+    margin: 10px;
+}
+
+.weather-report {
+    padding: 20px 0;
+}

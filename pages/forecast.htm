@@ -1,0 +1,49 @@
+<div class="row row-centered">
+    <div class="col-md-7 col-sm-10 col-xs-12 col-centered">
+        <p id="back-to-search">
+            <a href="#/" class="text-muted"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i> Back To Search</a>
+            <!-- Other Days of the week -->
+        </p>
+        Days:
+        <div class="btn-group" role="group" aria-label="...">
+            <a href="#/forecast/3" class="btn btn-default" ng-class="{ 'btn-primary': days === '3' }">3</a>
+            <a href="#/forecast/5" class="btn btn-default" ng-class="{ 'btn-primary': days === '5' }">5</a>
+            <a href="#/forecast/7" class="btn btn-default" ng-class="{ 'btn-primary': days === '7' }"> 7</a>
+        </div>
+
+        <!--
+        <div class="btn-group text-right" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary">F</button>
+            <button type="button" class="btn btn-default">C</button>
+        </div> -->
+
+        <hr>
+
+        <h2 class="text-center"> Today </h2>
+        <h1 class="text-center">{{ city }}</h1>
+        <div class="text-center" ng-cloak>
+            <i class="main-icon wi {{getIcon(weatherResult.list[0].weather['0'].main)}} "></i><br> {{convertToFahrenheit(weatherResult.list[0].temp.day) }} <i class="wi wi-fahrenheit"></i> <br>
+            <p class="text-capitalize">{{weatherResult.list[0].weather["0"].description}}</p>
+        </div>
+
+        <div class="row">
+
+            <div ng-repeat="w in weatherResult.list" ng-if="!$first">
+                <div ng-switch="days">
+                    <div class="col-xs-6 col-no-padding" ng-switch-when="3" id="forecast-box-{{$index}}">
+                        <weather-report weather-day="w" convert-to-standard="convertToFahrenheit(daytimeTemp)" convert-to-date="convertToDate(date)" get-icon="getIcon(index)"></weather-report>
+                    </div>
+                    <div class="col-xs-3 col-no-padding" ng-switch-when="5" id="forecast-box-{{$index}}">
+                        <weather-report weather-day="w" convert-to-standard="convertToFahrenheit(daytimeTemp)" convert-to-date="convertToDate(date)" get-icon="getIcon(index)"></weather-report>
+                    </div>
+                    <div class="col-xs-2 col-no-padding" ng-switch-when="7" id="forecast-box-{{$index}}">
+                        <weather-report weather-day="w" convert-to-standard="convertToFahrenheit(daytimeTemp)" convert-to-date="convertToDate(date)" get-icon="getIcon(index)"></weather-report>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
